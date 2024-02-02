@@ -1,0 +1,16 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=imersao-fullcycle
+      - MYSQL_PASSWORD=root
+    ports:
+      - 127.0.0.1:3606:3306
+    volumes:
+      - imersao-catalog-data:/var/lib/mysql
+
+volumes:
+  imersao-catalog-data:

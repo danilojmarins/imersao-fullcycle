@@ -6,6 +6,7 @@ import (
 
 	"github.com/danilojmarins/imersao-fullcycle/goapi/internal/entity"
 	"github.com/danilojmarins/imersao-fullcycle/goapi/internal/service"
+	"github.com/go-chi/chi/v5"
 )
 
 type WebProductHandler struct {
@@ -26,7 +27,7 @@ func (wph *WebProductHandler) GetProducts(w http.ResponseWriter, r *http.Request
 }
 
 func (wph *WebProductHandler) GetProductById(w http.ResponseWriter, r *http.Request) {
-	id := r.URL.Query().Get("id")
+	id := chi.URLParam(r, "id")
 	if id == "" {
 		http.Error(w, "id is required", http.StatusBadRequest)
 		return
@@ -40,7 +41,7 @@ func (wph *WebProductHandler) GetProductById(w http.ResponseWriter, r *http.Requ
 }
 
 func (wph *WebProductHandler) GetProductByCategoryId(w http.ResponseWriter, r *http.Request) {
-	categoryId := r.URL.Query().Get("category_id")
+	categoryId := chi.URLParam(r, "category_id")
 	if categoryId == "" {
 		http.Error(w, "category_id is required", http.StatusBadRequest)
 		return
