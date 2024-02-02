@@ -25,8 +25,9 @@ func Logger(next http.Handler) http.Handler {
 		func(w http.ResponseWriter, r *http.Request) {
 			rw := NewResponseWriter(w)
 			start := time.Now()
+			date := start.Format("02/01/2006 - 03:04:05")
 			next.ServeHTTP(rw, r)
-			fmt.Println("status:", rw.statusCode, "duration:", time.Since(start), "method:", r.Method, "path:", r.URL.EscapedPath())
+			fmt.Printf("[%s] %s %s -> %d [%v]\n", date, r.Method, r.URL.EscapedPath(), rw.statusCode, time.Since(start))
 		},
 	)
 }

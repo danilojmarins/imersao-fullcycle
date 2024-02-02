@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	db, err := sql.Open("mysql", "root:root@tcp(localhost:3306)/imersao-fullcycle")
+	db, err := sql.Open("mysql", "root:root@tcp(localhost:3606)/imersao-fullcycle")
 	if err != nil {
 		panic(err.Error())
 	}

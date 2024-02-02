@@ -1,0 +1,52 @@
+POST http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "Processadores"
+}
+
+###
+
+GET http://localhost:8080/category HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/category/bff3ba4d-818c-495f-96e9-7d4b7902f731 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+
+### Products
+
+POST http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+{
+    "name": "Intel i7 10700",
+    "description": "Processador Intel i7 10700 2.5GHz",
+    "price": 1599.99,
+    "categoryId": "bff3ba4d-818c-495f-96e9-7d4b7902f731",
+    "imageUrl": "URL/teste"
+}
+
+###
+
+GET http://localhost:8080/product HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/product/0060c163-16aa-4338-9d32-e84fc02aee60 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
+
+###
+
+GET http://localhost:8080/product/category/bff3ba4d-818c-495f-96e9-7d4b7902f731 HTTP/1.1
+Host: localhost:8080
+Content-Type: application/json
