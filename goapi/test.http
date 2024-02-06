@@ -14,7 +14,7 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/category/bff3ba4d-818c-495f-96e9-7d4b7902f731 HTTP/1.1
+GET http://localhost:8080/category/384aef94-8817-4609-8ded-f3edcc02859d HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
 
@@ -29,8 +29,8 @@ Content-Type: application/json
     "name": "Intel i7 10700",
     "description": "Processador Intel i7 10700 2.5GHz",
     "price": 1599.99,
-    "categoryId": "bff3ba4d-818c-495f-96e9-7d4b7902f731",
-    "imageUrl": "URL/teste"
+    "category_id": "384aef94-8817-4609-8ded-f3edcc02859d",
+    "image_url": "URL/teste"
 }
 
 ###
@@ -41,12 +41,12 @@ Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/product/0060c163-16aa-4338-9d32-e84fc02aee60 HTTP/1.1
+GET http://localhost:8080/product/19c1641d-5bed-4053-8309-4c24945fe349 HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
 
 ###
 
-GET http://localhost:8080/product/category/bff3ba4d-818c-495f-96e9-7d4b7902f731 HTTP/1.1
+GET http://localhost:8080/product/category/384aef94-8817-4609-8ded-f3edcc02859d HTTP/1.1
 Host: localhost:8080
 Content-Type: application/json
