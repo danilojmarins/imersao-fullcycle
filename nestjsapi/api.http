@@ -1,0 +1,39 @@
+GET http://localhost:3000/products
+
+###
+POST http://localhost:3000/products
+Content-Type: application/json
+
+{
+    "name": "Product 1",
+    "description": "Product 1 Description",
+    "image_url": "https://testimageurl.com/150",
+    "price": 100
+}
+
+###
+DELETE http://localhost:3000/products/ed6e4070-571e-42cf-a6b8-195953d371d5
+
+###
+GET http://localhost:3000/orders
+
+###
+GET http://localhost:3000/orders/adsad
+
+###
+POST http://localhost:3000/orders
+Content-Type: application/json
+
+{
+    "card_hash": "e07e4052-047d-4031-ab13-a12604f804e7",
+    "items": [
+        {
+            "product_id": "10ac8c216-9244-466f-8472-a1229a12aaa4",
+            "quantity": 2
+        },
+        {
+            "product_id": "414789db-2874-4f4c-b4a1-4951490fb480",
+            "quantity": 1
+        }
+    ]
+}
