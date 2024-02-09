@@ -8,6 +8,8 @@ import { OrdersModule } from './orders/orders.module';
 import { Order } from './orders/entities/order.entity';
 import { OrderItem } from './orders/entities/order-item.entity';
 import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
+import { User } from './users/entities/user.entity';
 
 @Module({
   imports: [
@@ -18,13 +20,14 @@ import { AuthModule } from './auth/auth.module';
       username: 'root',
       password: 'root',
       database: 'nest',
-      entities: [Product, Order, OrderItem],
+      entities: [Product, Order, OrderItem, User],
       synchronize: true,
       logging: true,
     }),
     ProductsModule,
     OrdersModule,
     AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
