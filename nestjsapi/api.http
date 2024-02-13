@@ -49,7 +49,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
+GET http://localhost:3000/users/f69a1e1e-0041-4bd6-920a-8ade292c006e
 
 ###
 PATCH http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
@@ -63,3 +63,12 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "danilojmarins@hotmail.com",
+    "password": "12345678"
+}
