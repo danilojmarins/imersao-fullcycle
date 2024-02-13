@@ -37,3 +37,29 @@ Content-Type: application/json
         }
     ]
 }
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "name": "Danilo José Marins",
+    "email": "danilojmarins@hotmail.com",
+    "password": "12345678"
+}
+
+###
+GET http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
+
+###
+PATCH http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
+Content-Type: application/json
+
+{
+    "name": "Danilo José Marins",
+    "email": "danilojmarins@hotmail.com",
+    "password": "12345678"
+}
+
+###
+DELETE http://localhost:3000/users/d8abb49f-1b8f-4296-974d-69373cea44fd
