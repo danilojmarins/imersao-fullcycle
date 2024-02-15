@@ -23,6 +23,7 @@ GET http://localhost:3000/orders/adsad
 ###
 POST http://localhost:3000/orders
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MTE5NTA5LWMyZmYtNDY5Yi04OGVmLTEwYmM3YmNhZWFmMSIsIm5hbWUiOiJEYW5pbG8gSm9zw6kgTWFyaW5zIiwiaWF0IjoxNzA3OTY1NzI5LCJleHAiOjE3MDgwNTIxMjl9.fUVvqctaG32Q06zKXtRlkHX2KivEVuFR05JNzi3OKyg
 
 {
     "card_hash": "e07e4052-047d-4031-ab13-a12604f804e7",
