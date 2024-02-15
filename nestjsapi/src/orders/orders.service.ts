@@ -4,7 +4,6 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from './entities/order.entity';
 import { In, Repository } from 'typeorm';
 import { Product } from '../products/entities/product.entity';
-import { randomUUID } from 'crypto';
 
 @Injectable()
 export class OrdersService {
@@ -13,7 +12,7 @@ export class OrdersService {
     @InjectRepository(Product) private productRepository: Repository<Product>,
   ) {}
 
-  async create(createOrderDto: CreateOrderDto) {
+  async create(createOrderDto: CreateOrderDto & { client_id: string }) {
     const productsIds = createOrderDto.items.map((item) => item.product_id);
     const uniqueProductIds = [...new Set(productsIds)];
     const products = await this.productRepository.findBy({
@@ -28,7 +27,7 @@ export class OrdersService {
     }
 
     const order = Order.create({
-      client_id: randomUUID(),
+      client_id: createOrderDto.client_id,
       items: createOrderDto.items.map((item) => {
         const product = products.find(
           (product) => product.id === item.product_id,
@@ -44,13 +43,14 @@ export class OrdersService {
     return await this.orderRepository.save(order);
   }
 
-  async findAll() {
-    return await this.orderRepository.find();
+  async findAll(client_id: string) {
+    return await this.orderRepository.find({ where: { client_id } });
   }
 
-  async findOne(id: string) {
-    return await this.orderRepository.findOne({
-      where: { id },
+  async findOne(id: string, client_id: string) {
+    return await this.orderRepository.findOneOrFail({
+      where: { id, client_id },
+      order: { created_at: 'DESC' },
     });
   }
 }
