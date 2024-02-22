@@ -1,0 +1,23 @@
+@import '../../../colors-variables.scss';
+
+.app-header {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 0px 1px 5px #BBB;
+}
+
+.header-option {
+    padding: 1rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+    transition: all ease 0.25s;
+
+    &:hover {
+        border-right: 2px solid #CCC;
+        border-left: 2px solid #CCC;
+    }
+}
